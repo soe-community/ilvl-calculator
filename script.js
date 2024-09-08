@@ -7,18 +7,18 @@ function getAllRarityIlvls(ilvl, sourceRarity) {
 
   // Calculate ilvl for each rarity
   return {
-    common: commonIlvl,
-    rare: getRareIlvl(commonIlvl),
-    epic: getEpicIlvl(commonIlvl),
-    legendary: getLegendaryIlvl(commonIlvl)
+    common: Math.round(commonIlvl),
+    rare: Math.round(getRareIlvl(commonIlvl)),
+    epic: Math.round(getEpicIlvl(commonIlvl)),
+    legendary: Math.round(getLegendaryIlvl(commonIlvl))
   };
 }
 
 function getCommonILevel(ilvl, rarity) {
   if (rarity === "common") return ilvl;
-  if (rarity === "rare") return Math.floor((ilvl - 5) / 2);
-  if (rarity === "epic") return Math.floor((ilvl - 15) / 3);
-  if (rarity === "legendary") return Math.floor((ilvl - 30) / 4);
+  if (rarity === "rare") return ((ilvl - 5) / 2);
+  if (rarity === "epic") return ((ilvl - 15) / 3);
+  if (rarity === "legendary") return ((ilvl - 30) / 4);
   return null;
 }
 
