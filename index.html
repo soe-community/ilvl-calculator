@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souls of Elysium - Item Level Calculator</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Souls of Elysium - Item Level Calculator</h1>
+
+    <div class="input-group">
+      <div>
+        <label for="ilvl">Item Level:</label>
+        <input type="number" id="ilvl" min="0" value="25" onchange="calculate()" />
+      </div>
+
+      <div>
+        <label for="upgrade">Upgrade:</label>
+        <div class="upgrade-input">
+          <input type="number" id="upgrade" min="0" max="10" value="0" onchange="calculate()" />
+        </div>
+      </div>
+
+      <div>
+        <label for="rarity">Rarity:</label>
+        <select id="rarity" onchange="calculate()">
+          <option value="common">Common</option>
+          <option value="rare">Rare</option>
+          <option value="epic">Epic</option>
+          <option value="legendary">Legendary</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>Item Levels</h2>
+    <div class="table-responsive">
+      <table id="itemLevelTable">
+        <tr>
+          <th>Upgrade</th>
+          <th>Common</th>
+          <th>Rare</th>
+          <th>Epic</th>
+          <th>Legendary</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="hidden">
+      <h2>Attribute Values</h2>
+      <div class="input-group">
+        <div>
+          <label for="attribute">Select Attribute:</label>
+          <select id="attribute" onchange="calculate()">
+            <option value="0">-Offensive Attributes-</option>
+            <option value="5">Physical Damage %</option>
+            <option value="5">Energy Damage %</option>
+            <option value="5">Fire Damage %</option>
+            <option value="5">Ice Damage %</option>
+            <option value="5">Holy Damage %</option>
+            <option value="5">Death Damage %</option>
+            <option value="3">Elemental Damage % </option>
+            <option value="1">Chance to deal Double Damage </option>
+            <option value="0">-Skills-</option>
+            <option value="1">Meele Skills</option>
+            <option value="1">One handed</option>
+            <option value="1">Two handed</option>
+            <option value="2">Magic Level</option>
+            <option value="2">Shielding</option>
+            <option value="2">Distance Skill</option>
+            <option value="0">-Defensive Attributes-</option>
+            <option value="1">Physical %</option>
+            <option value="1">Elemental Protection %</option>
+            <option value="2">Energy %</option>
+            <option value="2">Fire %</option>
+            <option value="2">Ice %</option>
+            <option value="2">Holy %</option>
+            <option value="2">Death %</option>
+            <option value="0">-Utility Attributes-</option>
+            <option value="7">HP %</option>
+            <option value="7">MP %</option>
+            <option value="2">EXP %</option>
+            <option value="4">Life Leech %</option>
+            <option value="2">Mana Leech %</option>
+            <option value="5">Increased Incomming Healing %</option>
+            <option value="3">Increased Gold drop %</option>
+            <option value="2">chance for max hp % for 60 sec on kill</option>
+            <option value="8">Damage taken recouped as life over 10 seconds</option>
+            <option value="6">Health on Kill</option>
+            <option value="9">Spellcost Reduction %</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table id="attributeTable">
+          <tr>
+            <th>Upgrade</th>
+            <th>Common</th>
+            <th>Rare</th>
+            <th>Epic</th>
+            <th>Legendary</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <a href="https://www.soerpg.com/" target="_blank">Play Souls of Elysium</a>
+    </div>
+  </div>
+</body>
+
+</html>
