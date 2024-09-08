@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <form>
+    Rarity:
+    <select id="mySelect1">
+      <option value="11">Common</option>
+      <option value="12">Rare</option>
+      <option value="13">Epic</option>
+
+
+
+    </select>
+  </form>
+  <form name="attributevalue">
+    Itemlevel: <input type="text" id="ourSum1">
+  </form>
+  <form>
+    legendary ilvl: <input type="text" id="result1" readonly>
+    <br><button type="button" onclick="sum1()">calculate</button>
+
+  </form>
+
+  <form>
+    Attribute:
+    <select id="mySelect">
+      <option value="0">-Offensive Attributes-</option>
+      <option value="5">Physical Damage %</option>
+      <option value="5">Energy Damage %</option>
+      <option value="5">Fire Damage %</option>
+      <option value="5">Ice Damage %</option>
+      <option value="5">Holy Damage %</option>
+      <option value="5">Death Damage %</option>
+      <option value="3">Elemental Damage % </option>
+      <option value="1">Chance to deal Double Damage </option>
+
+      <option value="0">-Skills-</option>
+      <option value="1">Meele Skills</option>
+      <option value="1">One handed</option>
+      <option value="1">Two handed</option>
+      <option value="2">Magic Level</option>
+      <option value="2">Shielding</option>
+      <option value="2">Distance Skill</option>
+
+      <option value="0">-Defensive Attributes-</option>
+      <option value="1">Physical %</option>
+      <option value="1">Elemental Protection %</option>
+      <option value="2">Energy %</option>
+      <option value="2">Fire %</option>
+      <option value="2">Ice %</option>
+      <option value="2">Holy %</option>
+      <option value="2">Death %</option>
+
+      <option value="0">-Utility Attributes-</option>
+      <option value="7">HP %</option>
+      <option value="7">MP %</option>
+      <option value="2">EXP %</option>
+      <option value="4">Life Leech %</option>
+      <option value="2">Mana Leech %</option>
+      <option value="5">Increased Incomming Healing %</option>
+      <option value="3">Increased Gold drop %</option>
+      <option value="2">chance for max hp % for 60 sec on kill</option>
+      <option value="8">Damage taken recouped as life over 10 seconds</option>
+      <option value="6">Health on Kill</option>
+      <option value="9">Spellcost Reduction %</option>
+
+
+
+
+    </select>
+  </form>
+  <form name="attributevalue">
+    Itemlevel: <input type="text" id="ourSum">
+  </form>
+  <form>
+    max attribute%: <input type="text" id="result" readonly>
+    <br><button type="button" onclick="sum()">calculate</button>
+
+  </form>
+
+  <script>
+    function sum() {
+
+      var mySelect = document.getElementById('mySelect');
+      var ourSum = document.getElementById('ourSum');
+      var res = document.getElementById('result');
+
+      if (mySelect.value == "1") {
+        res.value = Math.ceil(ourSum.value * 0.01);
+      } else if (mySelect.value == "2") {
+        res.value = Math.ceil(ourSum.value * 0.02);
+      } else if (mySelect.value == "3") {
+        res.value = Math.ceil(ourSum.value * 0.03);
+      } else if (mySelect.value == "4") {
+        res.value = Math.ceil(ourSum.value * 0.04);
+      } else if (mySelect.value == "5") {
+        res.value = Math.ceil(ourSum.value * 0.05);
+      } else if (mySelect.value == "6") {
+        res.value = Math.ceil(ourSum.value * 0.2);
+
+      } else if (mySelect.value == "7") {
+        res.value = Math.ceil(ourSum.value * 0.0205);
+      } else if (mySelect.value == "8") {
+        res.value = Math.ceil(ourSum.value * 0.058);
+      } else if (mySelect.value == "9") {
+        res.value = Math.ceil(ourSum.value * 0.034);
+      }
+
+
+
+    }
+
+    function sum1() {
+      var mySelect = document.getElementById('mySelect1');
+      var ourSum1 = document.getElementById('ourSum1');
+      var res = document.getElementById('result1');
+
+      if (mySelect1.value == "11") {
+        res.value = Math.floor(ourSum1.value * 4 + 30);
+      } else if (mySelect1.value == "12") {
+        res.value = Math.floor(ourSum1.value * 2 + 15);
+      } else if (mySelect1.value == "13") {
+        res.value = Math.floor(ourSum1.value / 0.75 + 5);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
