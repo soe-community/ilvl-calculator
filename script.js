@@ -89,7 +89,8 @@ function updateIlvlTable() {
 
     ['common', 'rare', 'epic', 'legendary'].forEach(rarity => {
       const curIlvl = baseIlvl[rarity] + (i*10);
-      newHTML += `<td ${inputIlvl == curIlvl ? `class="highlighted"` : ""}>${curIlvl}</td>`;
+      const hasHighlight = Number(inputUpgrade) === i && inputRarity === rarity;
+      newHTML += `<td ${hasHighlight ? `class="highlighted"` : ""}>${curIlvl}</td>`;
     });
 
     newHTML += `</tr>`;
